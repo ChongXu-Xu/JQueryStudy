@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <iframe src="keyEvent.html" name="test12" onload="this.name = 123" id="iframe"></iframe>
+        <button>name改变了吗？</button>
+        <script>
+            function $(el){
+                return typeof el == 'string' ? document.getElementById(el) : el;
+            }
+            function $t(name, cot){
+                cot = cot || document;
+                return cot.getElementsByTagName(name);
+            }
+            alert( $t('iframe')[0].name )
+            $t('button')[0].onclick = function(){
+                alert( $t('iframe')[0].name )
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="../jquery-3.3.1.js"></script>
+</head>
+
+<body>
+    <div class="a">点击添加动态元素</div>
+    <p class="b"></p> <!--动态节点放在p标签中-->
+    <script type="text/javascript">
+        $(".a").click(function(){
+            var html = '<a class="btn">动态添加的按钮</a>';
+            $(".b").html(html);
+        })
+    </script>
+    <script type="text/javascript">
+        $(".btn").on("click",function(){
+            alert(1);
+        });
+        $('.b').on('click','.btn',function(){
+            alert("成功了")
+        });
+    </script>
+</body>
+
+</html>
